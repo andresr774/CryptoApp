@@ -26,13 +26,13 @@ struct SettingsView: View {
                 // content layer
                 List {
                     swiftfulThinkingSection
-                        .background(Color.theme.background.opacity(0.5))
+                        .listRowBackground(Color(uiColor: .secondarySystemBackground))
                     coinGeckoSection
-                        .background(Color.theme.background.opacity(0.5))
+                        .listRowBackground(Color(uiColor: .secondarySystemBackground))
                     developerSection
-                        .background(Color.theme.background.opacity(0.5))
+                        .listRowBackground(Color(uiColor: .secondarySystemBackground))
                     applicationSection
-                        .background(Color.theme.background.opacity(0.5))
+                        .listRowBackground(Color(uiColor: .secondarySystemBackground))
                 }
                 .font(.headline)
                 .tint(.blue)
@@ -50,6 +50,7 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
+            .preferredColorScheme(.dark)
     }
 }
 
@@ -78,6 +79,7 @@ extension SettingsView {
                     .font(.callout)
                     .fontWeight(.medium)
                     .foregroundColor(Color.theme.accent)
+                    .lineLimit(nil)
             }
             .padding(.vertical)
             Link("Subscribe on Youtube 🥳", destination: youtubeURL)
